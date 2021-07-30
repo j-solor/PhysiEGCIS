@@ -206,6 +206,7 @@ void update_intracellular()
         static int i_Glu_i = (*all_cells)[i]->custom_data.find_variable_index( "intra_glu" );
         static int i_Lac_i = (*all_cells)[i]->custom_data.find_variable_index( "intra_lac" );
         static int energy_vi = (*all_cells)[i]->custom_data.find_variable_index( "intra_energy" );
+		static int warburg_flag = (*all_cells)[i]->custom_data.find_variable_index( "warburg_flag" );
 
         if( (*all_cells)[i]->is_out_of_domain == false  )
         {
@@ -255,6 +256,7 @@ void update_intracellular()
             (*all_cells)[i]->custom_data[i_Glu_i] = (*all_cells)[i]->phenotype.intracellular->get_parameter_value("Glucose");
             (*all_cells)[i]->custom_data[i_Lac_i] = (*all_cells)[i]->phenotype.intracellular->get_parameter_value("Lactate");
             (*all_cells)[i]->custom_data[energy_vi] = (*all_cells)[i]->phenotype.intracellular->get_parameter_value("Energy");
+			(*all_cells)[i]->custom_data[warburg_flag] = (*all_cells)[i]->phenotype.intracellular->get_parameter_value("Warburg_flag");
 
         }
     }
@@ -272,20 +274,21 @@ std::vector<std::string> my_coloring_function( Cell* pCell )
 	
     // Get Energy index
 	static int energy_vi = pCell->custom_data.find_variable_index( "intra_energy" );
+	static int warburg_flag = pCell->custom_data.find_variable_index( "warburg_flag" );
     
     // start with flow cytometry coloring 
 	std::vector<std::string> output = false_cell_coloring_cytometry(pCell); 
 	
 	// color
     // proliferative cell
-	if( pCell->phenotype.death.dead == false && pCell->type == 0 && pCell->custom_data[energy_vi] > 445)
+	if(pCell->custom_data[warburg_flag] == 0.0)
 	{
 		output[0] = "rgb(255,255,0)";
 		output[2] = "rgb(125,125,0)";
 	}
 
     // arrested cell
-	if( pCell->phenotype.death.dead == false && pCell->type == 0 && pCell->custom_data[energy_vi] <= 445)
+	if( pCell->custom_data[warburg_flag] == 1.0)
 	{
 		output[0] = "rgb(255,0,0)";
 		output[2] = "rgb(125,0,0)";

@@ -234,7 +234,7 @@
 				</secretion>
                 
 				<intracellular type="roadrunner">
-					<sbml_filename>./config/Toy_Metabolic_Model.xml</sbml_filename>
+					<sbml_filename>./config/test_warburg.xml</sbml_filename>
                     <intracellular_dt>0.01</intracellular_dt>
                     <map PC_substrate="oxygen" sbml_species="Oxygen"></map >
                     <map PC_substrate="lactate" sbml_species="Lactate"></map >
@@ -250,6 +250,7 @@
                 <intra_glu units="mM">0.0</intra_glu>
                 <intra_lac units="mM">0.0</intra_lac>
                 <intra_energy units="dimensionless">0.0</intra_energy>
+				<warburg_flag units="dimensionless">0.0</warburg_flag>
 			</custom_data>
 		</cell_definition>
     </cell_definitions>

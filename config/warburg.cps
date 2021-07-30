@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- generated with COPASI 4.33 (Build 246) (http://www.copasi.org) at 2021-07-29T21:14:04Z -->
+<!-- generated with COPASI 4.33 (Build 246) (http://www.copasi.org) at 2021-07-30T19:53:06Z -->
 <?oxygen RNGSchema="http://www.copasi.org/static/schema/CopasiML.rng" type="xml"?>
 <COPASI xmlns="http://www.copasi.org/static/schema" versionMajor="4" versionMinor="33" versionDevel="246" copasiSourcesModified="0">
   <ListOfFunctions>
@@ -29,8 +29,7 @@ Reaction scheme where the products are created from the reactants and the change
     </Function>
     <Function key="Function_40" name="Rate Law for Aerobic" type="UserDefined" reversible="unspecified">
       <MiriamAnnotation>
-<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" />
       </MiriamAnnotation>
       <Expression>
         Warburg_param*k_aer_w*substrate + (1-Warburg_param)*k_aer*substrate
@@ -44,8 +43,7 @@ Reaction scheme where the products are created from the reactants and the change
     </Function>
     <Function key="Function_41" name="Rate Law for Anaerobic" type="UserDefined" reversible="unspecified">
       <MiriamAnnotation>
-<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" />
       </MiriamAnnotation>
       <Expression>
         Warburg_param*k_ane_w*substrate + (1-Warburg_param)*k_ane*substrate
@@ -102,8 +100,7 @@ Reaction scheme where the products are created from the reactants and the change
     <ListOfCompartments>
       <Compartment key="Compartment_0" name="Intracellular" simulationType="fixed" dimensionality="3" addNoise="false">
         <MiriamAnnotation>
-<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" />
         </MiriamAnnotation>
       </Compartment>
     </ListOfCompartments>
@@ -164,22 +161,19 @@ Reaction scheme where the products are created from the reactants and the change
       </Metabolite>
       <Metabolite key="Metabolite_8" name="Warburg_flag" simulationType="reactions" compartment="Compartment_0" addNoise="false">
         <MiriamAnnotation>
-<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" />
         </MiriamAnnotation>
       </Metabolite>
     </ListOfMetabolites>
     <ListOfModelValues>
       <ModelValue key="ModelValue_0" name="k_aer" simulationType="fixed" addNoise="false">
         <MiriamAnnotation>
-<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" />
         </MiriamAnnotation>
       </ModelValue>
       <ModelValue key="ModelValue_1" name="k_ane" simulationType="fixed" addNoise="false">
         <MiriamAnnotation>
-<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" />
         </MiriamAnnotation>
       </ModelValue>
       <ModelValue key="ModelValue_2" name="k_usage" simulationType="fixed" addNoise="false">
@@ -208,14 +202,12 @@ Reaction scheme where the products are created from the reactants and the change
       </ModelValue>
       <ModelValue key="ModelValue_6" name="k_aer_w" simulationType="fixed" addNoise="false">
         <MiriamAnnotation>
-<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" />
         </MiriamAnnotation>
       </ModelValue>
       <ModelValue key="ModelValue_7" name="k_ane_w" simulationType="fixed" addNoise="false">
         <MiriamAnnotation>
-<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" />
         </MiriamAnnotation>
       </ModelValue>
       <ModelValue key="ModelValue_8" name="Warburg_param" simulationType="fixed" addNoise="false">
@@ -225,18 +217,15 @@ Reaction scheme where the products are created from the reactants and the change
       </ModelValue>
       <ModelValue key="ModelValue_9" name="Warburg_thresh" simulationType="fixed" addNoise="false">
         <MiriamAnnotation>
-<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-<rdf:Description rdf:about="#ModelValue_9">
-</rdf:Description>
-</rdf:RDF>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+
         </MiriamAnnotation>
       </ModelValue>
     </ListOfModelValues>
     <ListOfReactions>
       <Reaction key="Reaction_0" name="Aerobic" reversible="false" fast="false" addNoise="false">
         <MiriamAnnotation>
-<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" />
         </MiriamAnnotation>
         <ListOfSubstrates>
           <Substrate metabolite="Metabolite_0" stoichiometry="1"/>
@@ -269,8 +258,7 @@ Reaction scheme where the products are created from the reactants and the change
       </Reaction>
       <Reaction key="Reaction_1" name="Anaerobic" reversible="false" fast="false" addNoise="false">
         <MiriamAnnotation>
-<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" />
         </MiriamAnnotation>
         <ListOfSubstrates>
           <Substrate metabolite="Metabolite_0" stoichiometry="1"/>
@@ -280,7 +268,7 @@ Reaction scheme where the products are created from the reactants and the change
           <Product metabolite="Metabolite_3" stoichiometry="1"/>
         </ListOfProducts>
         <ListOfConstants>
-          <Constant key="Parameter_4945" name="k_ane_w" value="0.01"/>
+          <Constant key="Parameter_4945" name="k_ane_w" value="0.1"/>
           <Constant key="Parameter_4944" name="Warburg_param" value="0"/>
           <Constant key="Parameter_4943" name="k_ane" value="0.001"/>
         </ListOfConstants>
@@ -303,8 +291,7 @@ Reaction scheme where the products are created from the reactants and the change
       </Reaction>
       <Reaction key="Reaction_2" name="Energy_Usage" reversible="false" fast="false" addNoise="false">
         <MiriamAnnotation>
-<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" />
         </MiriamAnnotation>
         <ListOfSubstrates>
           <Substrate metabolite="Metabolite_2" stoichiometry="1"/>
@@ -327,7 +314,8 @@ Reaction scheme where the products are created from the reactants and the change
     <ListOfEvents>
       <Event key="Event_0" name="divide" delayAssignment="true" fireAtInitialTime="0" persistentTrigger="1">
         <MiriamAnnotation>
-<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" />
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+
         </MiriamAnnotation>
         <TriggerExpression>
           &lt;CN=Root,Model=New Model_2,Vector=Compartments[Intracellular],Vector=Metabolites[Energy],Reference=Concentration> gt &lt;CN=Root,Model=New Model_2,Vector=Values[energy_prolif_thresh],Reference=Value>
@@ -401,7 +389,7 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
           <ModelParameter cn="CN=Root,Model=New Model_2,Vector=Values[k_aer_w]" value="0.001" type="ModelValue" simulationType="fixed"/>
           <ModelParameter cn="CN=Root,Model=New Model_2,Vector=Values[k_ane_w]" value="0.10000000000000001" type="ModelValue" simulationType="fixed"/>
           <ModelParameter cn="CN=Root,Model=New Model_2,Vector=Values[Warburg_param]" value="0" type="ModelValue" simulationType="fixed"/>
-          <ModelParameter cn="CN=Root,Model=New Model_2,Vector=Values[Warburg_thresh]" value="5" type="ModelValue" simulationType="fixed"/>
+          <ModelParameter cn="CN=Root,Model=New Model_2,Vector=Values[Warburg_thresh]" value="20" type="ModelValue" simulationType="fixed"/>
         </ModelParameterGroup>
         <ModelParameterGroup cn="String=Kinetic Parameters" type="Group">
           <ModelParameterGroup cn="CN=Root,Model=New Model_2,Vector=Reactions[Aerobic]" type="Reaction">
@@ -472,7 +460,7 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
       <StateTemplateVariable objectReference="ModelValue_9"/>
     </StateTemplate>
     <InitialState type="initialState">
-      0 2.7099633856500026e+26 0 6.0221408569999997e+25 6.0221408569999997e+25 0 0 0 0 0 1 0.01 0.001 0.0023 440 430 445 0.001 0.10000000000000001 0 5 
+      0 2.7099633856500026e+26 0 6.0221408569999997e+25 6.0221408569999997e+25 0 0 0 0 0 1 0.01 0.001 0.0023 440 430 445 0.001 0.10000000000000001 0 20 
     </InitialState>
   </Model>
   <ListOfTasks>
@@ -939,10 +927,8 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
     <SBMLMap SBMLid="Transition_Rate" COPASIkey="Metabolite_7"/>
     <SBMLMap SBMLid="Warburg_flag" COPASIkey="Metabolite_8"/>
     <SBMLMap SBMLid="Warburg_param" COPASIkey="ModelValue_8"/>
-    <SBMLMap SBMLid="Warburg_switch" COPASIkey="Event_1"/>
     <SBMLMap SBMLid="Warburg_thresh" COPASIkey="ModelValue_9"/>
     <SBMLMap SBMLid="apoptosis_rate" COPASIkey="Metabolite_4"/>
-    <SBMLMap SBMLid="divide" COPASIkey="Event_0"/>
     <SBMLMap SBMLid="energy_death_thresh" COPASIkey="ModelValue_4"/>
     <SBMLMap SBMLid="energy_move_thresh" COPASIkey="ModelValue_3"/>
     <SBMLMap SBMLid="energy_prolif_thresh" COPASIkey="ModelValue_5"/>
