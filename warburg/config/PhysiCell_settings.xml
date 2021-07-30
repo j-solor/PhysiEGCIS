@@ -87,7 +87,7 @@
 	</domain>
 	
 	<overall>
-		<max_time units="min">14400</max_time> <!-- 5 days * 24 h * 60 min -->
+		<max_time units="min">1440</max_time> <!-- 5 days * 24 h * 60 min -->
 		<time_units>min</time_units>
 		<space_units>micron</space_units>
 	
@@ -97,14 +97,14 @@
 	</overall>
 	
 	<parallel>
-		<omp_num_threads>8</omp_num_threads>
+		<omp_num_threads>10</omp_num_threads>
 	</parallel> 
 	
 	<save>
 		<folder>output</folder> <!-- use . for root --> 
 
 		<full_data>
-			<interval units="min">360</interval>
+			<interval units="min">30</interval>
 			<enable>true</enable>
 		</full_data>
 		
@@ -234,7 +234,7 @@
 				</secretion>
                 
 				<intracellular type="roadrunner">
-					<sbml_filename>./config/test_warburg.xml</sbml_filename>
+					<sbml_filename>./config/Toy_Metabolic_Model.xml</sbml_filename>
                     <intracellular_dt>0.01</intracellular_dt>
                     <map PC_substrate="oxygen" sbml_species="Oxygen"></map >
                     <map PC_substrate="lactate" sbml_species="Lactate"></map >
@@ -250,7 +250,6 @@
                 <intra_glu units="mM">0.0</intra_glu>
                 <intra_lac units="mM">0.0</intra_lac>
                 <intra_energy units="dimensionless">0.0</intra_energy>
-				<warburg_flag units="dimensionless">0</warburg_flag>
 			</custom_data>
 		</cell_definition>
     </cell_definitions>

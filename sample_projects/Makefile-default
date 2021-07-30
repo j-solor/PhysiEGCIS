@@ -153,6 +153,15 @@ ode-energy-sample:
 	cp ./config/PhysiCell_settings.xml ./config/PhysiCell_settings-backup.xml 
 	cp ./sample_projects_intracellular/ode/ode_energy/config/* ./config/	
 
+warburg:
+	cp ./warburg/custom_modules/* ./custom_modules/
+	touch main.cpp && cp main.cpp main-backup.cpp
+	cp ./warburg/main.cpp ./main.cpp 
+	cp Makefile Makefile-backup
+	cp ./warburg/Makefile .
+	cp ./config/PhysiCell_settings.xml ./config/PhysiCell_settings-backup.xml 
+	cp ./warburg/config/* ./config/
+	
 physiboss-cell-lines-sample:
 	cp ./sample_projects_intracellular/boolean/physiboss_cell_lines/custom_modules/* ./custom_modules/
 	touch main.cpp && cp main.cpp main-backup.cpp
