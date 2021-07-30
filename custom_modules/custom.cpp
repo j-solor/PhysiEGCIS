@@ -155,7 +155,7 @@ void setup_tissue( void )
 	
 	double cell_radius = cell_defaults.phenotype.geometry.radius; 
 	double cell_spacing = 0.8 * 2.0 * cell_radius; 
-	double initial_tumor_radius = 300;
+	double initial_tumor_radius = 100;
     double retval;
 
 	std::vector<std::vector<double>> positions = create_cell_circle_positions(cell_radius,initial_tumor_radius);
@@ -257,7 +257,8 @@ void update_intracellular()
             (*all_cells)[i]->custom_data[i_Lac_i] = (*all_cells)[i]->phenotype.intracellular->get_parameter_value("Lactate");
             (*all_cells)[i]->custom_data[energy_vi] = (*all_cells)[i]->phenotype.intracellular->get_parameter_value("Energy");
 			(*all_cells)[i]->custom_data[warburg_flag] = (*all_cells)[i]->phenotype.intracellular->get_parameter_value("Warburg_flag");
-
+			
+			
         }
     }
     
