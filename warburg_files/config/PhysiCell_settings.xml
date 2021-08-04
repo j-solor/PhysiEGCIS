@@ -234,7 +234,7 @@
 				</secretion>
                 
 				<intracellular type="roadrunner">
-					<sbml_filename>./config/test_warburg.xml</sbml_filename>
+					<sbml_filename>./config/warburg_.5_thresh_SBML.xml</sbml_filename>
                     <intracellular_dt>0.01</intracellular_dt>
                     <map PC_substrate="oxygen" sbml_species="Oxygen"></map >
                     <map PC_substrate="lactate" sbml_species="Lactate"></map >

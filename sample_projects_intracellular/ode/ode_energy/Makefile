@@ -221,14 +221,28 @@ reset:
 	touch ./config/empty.csv
 	rm ./config/*.csv	
 	
-FOLDER := output
+# easier animation 
+
 FRAMERATE := 24
+OUTPUT := output
+
+jpeg: 
+	@magick identify -format "%h" $(OUTPUT)/initial.svg >> __H.txt 
+	@magick identify -format "%w" $(OUTPUT)/initial.svg >> __W.txt 
+	@expr 2 \* \( $$(grep . __H.txt) / 2 \) >> __H1.txt 
+	@expr 2 \* \( $$(grep . __W.txt) / 2 \) >> __W1.txt 
+	@echo "$$(grep . __W1.txt)!x$$(grep . __H1.txt)!" >> __resize.txt 
+	@magick mogrify -format jpg -resize $$(grep . __resize.txt) $(OUTPUT)/s*.svg
+	rm -f __H*.txt __W*.txt __resize.txt 
+	
+gif: 
+	magick convert $(OUTPUT)/s*.svg $(OUTPUT)/out.gif 
+	 
 movie:
-#	mencoder "mf://snapshot*.jpg" -ovc lavc -lavcopts vcodec=mpeg4:vbitrate=10000:mbd=2:trell -mf fps=$(FRAMERATE):type=jpg -nosound -o out.avi	
-#	ffmpeg -i out.avi out.mp4 
-	ffmpeg -r $(FRAMERATE) -f image2 -i snapshot%08d.jpg -vcodec libx264 -pix_fmt yuv420p -strict -2 -tune animation -crf 15 -acodec aac out.mp4
-	#del snap*.jpg
-# archival 
+	ffmpeg -r $(FRAMERATE) -f image2 -i $(OUTPUT)/snapshot%08d.jpg -vcodec libx264 -pix_fmt yuv420p -strict -2 -tune animation -crf 15 -acodec none $(OUTPUT)/out.mp4
+	
+movie2:
+	ffmpeg -r $(FRAMERATE) -f image2 -i $(OUTPUT)/output%08d.png -vcodec libx264 -pix_fmt yuv420p -strict -2 -tune animation -crf 15 -acodec none $(OUTPUT)/out2.mp4
 	
 checkpoint: 
 	zip -r $$(date +%b_%d_%Y_%H%M).zip Makefile *.cpp *.h config/*.xml custom_modules/* 
