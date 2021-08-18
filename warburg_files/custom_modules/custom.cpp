@@ -97,6 +97,9 @@ void create_cell_types( void )
 	cell_defaults.functions.add_cell_basement_membrane_interactions = NULL; 
 	cell_defaults.functions.calculate_distance_to_membrane = NULL; 
 	
+		//movement
+		cell_defaults.functions.update_migration_bias = motility_rule;
+	
 	/*
 	   This parses the cell definitions in the XML config file. 
 	*/
@@ -311,7 +314,22 @@ std::vector<std::string> my_coloring_function( Cell* pCell )
 	return output; 
 }
 
+	void motility_rule( Cell* pC, Phenotype& p, double dt )
+	{
+		// find my cell definition 
+		Cell_Definition* pCD = find_cell_definition( pC->type );
 
+
+		// find index of O2 in the microenvironment 
+		static int nO2 = microenvironment.find_density_index( "oxygen" ); 
+		// sample pO2
+		double pO2 = pC->nearest_density_vector()[nO2]; 
+		// sample pO2 gradient 
+		// set migration bias direction to grad(pO2)
+		p.motility.migration_bias_direction = pC->nearest_gradient(nO2);
+		// normalize 
+		normalize( &(p.motility.migration_bias_direction) );
+	}
 
 std::vector<std::vector<double>> create_cell_circle_positions(double cell_radius, double sphere_radius)
 {

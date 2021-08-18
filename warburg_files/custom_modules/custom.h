@@ -91,3 +91,4 @@ void predator_cycling_function( Cell* pCell, Phenotype& phenotype, double dt );
 
 void prey_cycling_function( Cell* pCell , Phenotype& phenotype, double dt ); 
 std::vector<std::vector<double>> create_cell_circle_positions(double cell_radius, double sphere_radius);
+void motility_rule( Cell* pC, Phenotype& p, double dt );
